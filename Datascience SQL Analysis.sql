@@ -49,6 +49,16 @@ FROM SQLPortfolio1..DsSalary
 GROUP BY job_title
 ORDER BY highest_salary DESC
 
+--What is the highest paying entry level data science job?
+
+SELECT TOP 5 job_title, MAX(salary_in_usd) AS highest_salary
+FROM SQLPortfolio1..clean_ds_salaries
+WHERE experience_level = 'EN'
+GROUP BY job_title
+ORDER BY highest_salary DESC
+
+--ANS: Machine Learning Engineer, 250,000
+
 --What is the highest paying entry level data science job
 WITH table1 (job_title, experience_level, salary_in_usd, job_rank)
 AS(
@@ -66,7 +76,7 @@ ORDER BY salary_in_usd DESC
 
 --What is the highest paying mid level data science job
 
-SELECT  MAX(salary_in_usd) AS highest_salary, job_title
+SELECT TOP 5 job_title, MAX(salary_in_usd) AS highest_salary
 FROM SQLPortfolio1..clean_ds_salaries
 WHERE experience_level = 'MI'
 GROUP BY job_title
@@ -76,7 +86,7 @@ ORDER BY highest_salary DESC
 
 --What is the highest paying senior level data science job
 
-SELECT  MAX(salary_in_usd) AS highest_salary, job_title
+SELECT  TOP 5 job_title, MAX(salary_in_usd) AS highest_salary
 FROM SQLPortfolio1..clean_ds_salaries
 WHERE experience_level = 'SE'
 GROUP BY job_title
@@ -164,7 +174,7 @@ GROUP BY CASE WHEN experience_level = 'MI' THEN 'Mid level'
 ORDER BY average_salary DESC
 
 
---Does company size affect salary?
+--Does employment type affect salary?
 SELECT CASE WHEN employment_type = 'FT' THEN 'Full time'
             WHEN employment_type = 'PT' THEN 'Part time'
 			WHEN employment_type = 'FL' THEN 'Freelance'
@@ -179,48 +189,14 @@ GROUP BY CASE WHEN employment_type = 'FT' THEN 'Full time'
 		ELSE NULL END 
 ORDER BY average_salary DESC
 
---Average salary per year
-SELECT CASE WHEN work_year = '2020' THEN 'Year 2020'
-			WHEN work_year = '2021' THEN 'Year 2021'
-			WHEN work_year = '2022' THEN 'Year 2022'
-		ELSE NULL END AS year_of_work,  
-		ROUND(AVG(salary_in_usd), 2) AS average_salary
-FROM SQLPortfolio1..clean_ds_salaries 
-GROUP BY CASE WHEN work_year = '2020' THEN 'Year 2020'
-			WHEN work_year = '2021' THEN 'Year 2021'
-			WHEN work_year = '2022' THEN 'Year 2022'
-		ELSE NULL END 
-ORDER BY average_salary DESC
---ANS: Average salary progressed over the years
-
---What is the average salary of workers residing outside US
-
-SELECT CASE WHEN employee_residence = 'US' THEN 'In the US'
-		 ELSE 'Not in US' END AS residence_category,
-		 ROUND(AVG(salary_in_usd), 2) AS avg_salary
-FROM SQLPortfolio1..clean_ds_salaries 
-WHERE employee_residence NOT LIKE '%US%'
-GROUP BY CASE WHEN employee_residence = 'US' THEN 'In the US'
-		 ELSE 'Not in US' END
-
---ANS: $67,469.79
-
---What is the average salary of workers residing in the US
-SELECT CASE WHEN employee_residence = 'US' THEN 'In the US'
-		 ELSE 'Not in US' END AS residence_category,
-		 ROUND(AVG(salary_in_usd), 2) AS avg_salary
-FROM SQLPortfolio1..clean_ds_salaries 
-WHERE employee_residence  LIKE '%US%'
-GROUP BY CASE WHEN employee_residence = 'US' THEN 'In the US'
-		 ELSE 'Not in US' END
---ANS: $150,094.92
 
 --Does Company Size affect salary
 SELECT CASE WHEN company_size = 'L' THEN 'Large Company'
 			WHEN company_size = 'M' THEN 'Medium Company'
 			WHEN company_size = 'S' THEN 'Small Company'
 		 ELSE NULL END AS new_company_size,
-		 ROUND(AVG(salary_in_usd), 2) AS avg_salary
+		 ROUND(MIN(salary_in_usd), 2) AS min_salary, 
+ 		ROUND(MAX(salary_in_usd), 2) AS max_salary
 FROM SQLPortfolio1..clean_ds_salaries 
 GROUP BY CASE WHEN company_size = 'L' THEN 'Large Company'
 			WHEN company_size = 'M' THEN 'Medium Company'
@@ -232,7 +208,8 @@ GROUP BY CASE WHEN company_size = 'L' THEN 'Large Company'
 --Does company location affect Salary
 SELECT CASE WHEN company_location = 'US' THEN 'In the US'
 		 ELSE 'Not in US' END AS company_loc_category,
-		 ROUND(AVG(salary_in_usd), 2) AS avg_salary
+		 ROUND(MIN(salary_in_usd), 2) AS min_salary, 
+		 ROUND(MAX(salary_in_usd), 2) AS max_salary
 FROM SQLPortfolio1..clean_ds_salaries 
 GROUP BY CASE WHEN company_location = 'US' THEN 'In the US'
 		 ELSE 'Not in US' END
