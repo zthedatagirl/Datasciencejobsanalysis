@@ -1,4 +1,4 @@
-# Datasciencejobsanalysis using SQL
+# Data_science_jobs_analysis using SQL
 In this project, I carried out Exploratory Data Analysis on a data science job dataset. In the course of the analysis, I answered the following questions: 
 How many job title was included in the dataset?
 Which experience level has the highest salary?
