@@ -21,3 +21,5 @@ In this project, I carried out Exploratory Data Analysis on a data science job d
 16. Does company location affect Salary?
 
 Link to the code [Data Science Analysis](https://github.com/zthedatagirl/Datasciencejobsanalysis/blob/d12493ff2c5cb69126c6299e42360da2fc6d888d/Datascience%20SQL%20Analysis.sql)
+
+Check out my Medium Article [Data Science; SQL Analysis Article](https://medium.com/@ZainabAkinwande/data-science-job-salaries-sql-analysis-1a35e844223)
