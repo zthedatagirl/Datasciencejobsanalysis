@@ -1,4 +1,4 @@
-# Data_science_jobs_analysis using SQL
+# DATA SCIENCE JOB SALARY: SQL ANALYSIS
 
 ![data image](https://user-images.githubusercontent.com/107036397/188007855-a876ce16-539a-46f2-b196-055b1fbc4802.png)
 
