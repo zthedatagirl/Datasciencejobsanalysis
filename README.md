@@ -6,7 +6,7 @@
 Data science is the domain of study that deals with vast volumes of data using modern tools and techniques to find unseen patterns, derive meaningful information, and make business decisions. Industries across the board have come to rely on data-driven insights as a way to guide their business strategy and execute day-to-day operations. Not surprising that data-related job roles and opportunities have mushroomed across the globe. Harvard Business Review calls the role of a data scientist as “the sexiest job of the 21st century”. Thus, it is important to know how much "the sexiest job" pays.
 
 ## CONTENT
-In this project, I carried out Exploratory Data Analysis on a data science job dataset. In the course of the analysis, I answered the following questions: 
+In this project, I carried out Exploratory Data Analysis on a data science job dataset. I cleaned the data in Excel and analyzed it in SQL. During the analysis, I answered the following questions: 
 1. How many job title was included in the dataset?
 2. Which experience level has the highest salary?
 3. Does the employment type affect salary?
