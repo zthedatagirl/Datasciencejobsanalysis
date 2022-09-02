@@ -3,7 +3,7 @@
 ![data image](https://user-images.githubusercontent.com/107036397/188007855-a876ce16-539a-46f2-b196-055b1fbc4802.png)
 
 ## ABOUT
-Data science is the domain of study that deals with vast volumes of data using modern tools and techniques to find unseen patterns, derive meaningful information, and make business decisions. Industries across the board have come to rely on data-driven insights as a way to guide their business strategy and execute day-to-day operations. Not surprising that data-related job roles and opportunities have mushroomed across the globe. Harvard Business Review calls the role of a data scientist as “the sexiest job of the 21st century”.
+Data science is the domain of study that deals with vast volumes of data using modern tools and techniques to find unseen patterns, derive meaningful information, and make business decisions. Industries across the board have come to rely on data-driven insights as a way to guide their business strategy and execute day-to-day operations. Not surprising that data-related job roles and opportunities have mushroomed across the globe. Harvard Business Review calls the role of a data scientist as “the sexiest job of the 21st century”. Thus, it is important to know how much "the sexiest job" pays.
 
 ## CONTENT
 In this project, I carried out Exploratory Data Analysis on a data science job dataset. In the course of the analysis, I answered the following questions: 
